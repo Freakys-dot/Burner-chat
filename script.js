@@ -2,20 +2,21 @@
 const correctPassword = "toro"; // Change this to your desired password
 
 // Check if the user is logged in
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const isAuthenticated = localStorage.getItem("authenticated");
 
   if (isAuthenticated === "true") {
     // User is authenticated, show the diary
     document.getElementById("password-form").style.display = "none";
     document.getElementById("diary-section").style.display = "block";
-    loadEntries();
+    loadEntries(); // Load any saved entries if needed
   } else {
     // User is not authenticated, show the password form
     document.getElementById("password-form").style.display = "block";
   }
 });
 
+// Check the password when the user submits it
 function checkPassword() {
   const enteredPassword = document.getElementById("password").value;
   const errorMessage = document.getElementById("error-message");
@@ -25,7 +26,7 @@ function checkPassword() {
     localStorage.setItem("authenticated", "true");
     document.getElementById("password-form").style.display = "none";
     document.getElementById("diary-section").style.display = "block";
-    loadEntries();
+    loadEntries(); // Load any saved entries if needed
   } else {
     // If the password is incorrect, show an error message
     errorMessage.style.display = "block";
@@ -35,11 +36,11 @@ function checkPassword() {
 // Function to save entries, etc.
 function saveEntry() {
   const entryText = document.getElementById("diary-entry").value;
-  
+
   if (entryText.trim() !== "") {
     // Get existing entries from localStorage or initialize an empty array
     const entries = JSON.parse(localStorage.getItem("diaryEntries")) || [];
-    
+
     // Add the new entry to the array
     entries.push(entryText);
 
@@ -48,7 +49,7 @@ function saveEntry() {
 
     // Add the entry to the page
     displayEntry(entryText);
-    
+
     // Clear the textarea after saving
     document.getElementById("diary-entry").value = "";
   } else {
