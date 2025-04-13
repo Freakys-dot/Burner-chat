@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cozy Diary</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>My Cozy Diary</h1>
+      <p>Hi Dwi, what's on your thoughts today, Let J knows about it !!</p>
+    </header>
+    
+    <!-- Password Form (initially hidden) -->
+    <div id="password-form" class="password-form">
+      <h2>But, You're strange</h2>
+      <input type="password" id="password" placeholder="Gimme Code!" />
+      <button class="btn" onclick="checkPassword()">IN</button>
+      <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
+    </div>
+
+    <!-- Diary Section (initially hidden until password is correct) -->
+    <section id="diary-section" class="diary-section" style="display: none;">
+      <textarea id="diary-entry" placeholder="Write your thoughts here..." rows="10"></textarea>
+      <div class="buttons">
+        <button class="btn" onclick="saveEntry()">Save Entry</button>
+        <button class="btn" onclick="clearEntry()">Clear</button>
+      </div>
+      
+      <h2>Your Past Entries:</h2>
+      <div id="entries"></div>
+    </section>
+  </div>
