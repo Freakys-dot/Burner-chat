@@ -67,7 +67,7 @@ function displayEntry(entryText) {
   newEntry.classList.add("entry");
 
   const toggleButton = document.createElement("button");
-  toggleButton.textContent = "Show/Hide Entry";
+  toggleButton.textContent = "Eyes";
   toggleButton.onclick = function () {
     const hiddenText = newEntry.querySelector(".hidden-text");
     hiddenText.style.display = hiddenText.style.display === "none" ? "block" : "none";
