@@ -12,24 +12,32 @@
       <h1>My Cozy Diary</h1>
       <p>Hi Dwi, what's on your thoughts today, Let J knows about it !!</p>
     </header>
-    
-    <!-- Password Form (initially hidden) -->
+
+    <!-- Password Form (Initially Visible) -->
     <div id="password-form" class="password-form">
-      <h2>But, You're strange</h2>
-      <input type="password" id="password" placeholder="Gimme Code!" />
-      <button class="btn" onclick="checkPassword()">IN</button>
+      <h2>Enter Password</h2>
+      <input type="password" id="password" placeholder="Enter password" />
+      <button class="btn" onclick="checkPassword()">Submit</button>
       <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
     </div>
 
-    <!-- Diary Section (initially hidden until password is correct) -->
+    <!-- Diary Section (Initially Hidden) -->
     <section id="diary-section" class="diary-section" style="display: none;">
-      <textarea id="diary-entry" placeholder="Write your thoughts here..." rows="10"></textarea>
+      <textarea id="diary-entry" placeholder="What's going on today. . ." rows="10"></textarea>
       <div class="buttons">
         <button class="btn" onclick="saveEntry()">Save Entry</button>
         <button class="btn" onclick="clearEntry()">Clear</button>
       </div>
-      
       <h2>Your Past Entries:</h2>
       <div id="entries"></div>
     </section>
   </div>
+
+  <!-- Pet Animation (Add More if Needed) -->
+  <div class="pet-animation">
+    <img src="https://media.giphy.com/media/d3mlE7sUjJFQd2zL/giphy.gif" alt="Dancing Cat" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
